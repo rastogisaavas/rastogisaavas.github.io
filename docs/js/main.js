@@ -172,3 +172,13 @@ $(".fancybox").fancybox({
         }
     }
 });
+
+
+$(".scroll-on-click").on('click', function(event) {
+    event.preventDefault();
+    var link = $(this).attr('href');
+    var explore = $(link).offset().top - $(".top-bar").outerHeight();
+    $('html, body').animate({
+      scrollTop: explore
+    }, 500);
+  });
